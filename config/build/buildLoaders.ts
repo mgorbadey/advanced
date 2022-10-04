@@ -48,8 +48,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   }
 
   return [
-    svgLoader,
     fileLoader,
+    svgLoader,
     typescriptLoader,
     cssLoader
   ]
