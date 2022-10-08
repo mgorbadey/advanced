@@ -1,20 +1,20 @@
-.Sidebar{
-  height: calc(100vh - 50px); // тут если вместо 50px ставить var(--navbar-height) почему-то не работает
-  width: var(--sidebar-width);
-  background-color: var(--inverted-bg-color);
-  position: relative;
-  transition: width 0.2s;
+.Sidebar {
+    height: calc(100vh - 50px);
+    width: var(--sidebar-width);
+    background-color: var(--inverted-bg-color);
+    position: relative;
+    transition: width 0.2s;
 }
 
-.collapsed{
-  width: var(--sidebar-width-collapsed);
+.collapsed {
+    width: var(--sidebar-width-collapsed);
 }
 
-.switchers{
-  position: absolute;
-  width: 100%;
-  bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.switchers {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
