@@ -1,5 +1,5 @@
 .Sidebar {
-    height: calc(100vh - 50px);
+    height: calc(100vh - var(--navbar-height)); // здесь если вместо 50рх ставить
     width: var(--sidebar-width);
     background-color: var(--inverted-bg-color);
     position: relative;

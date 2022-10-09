@@ -7,10 +7,10 @@ export function classNames(
 ): string {
     return [
         mainClass,
+        ...additionalClasses.filter(Boolean),
         ...Object.entries(mods)
             .filter(([className, value]) => Boolean(value))
             .map(([className, value]) => className),
-        ...additionalClasses.filter(Boolean),
     ]
         .join(' ');
 }
