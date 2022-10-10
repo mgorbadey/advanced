@@ -3,5 +3,7 @@
   "Main Page":"Main Page",
   "About": "About",
   "Toggle":"Toggle",
-  "Page Not Found": "Page Not Found"
+  "Page Not Found": "Page Not Found",
+  "Somethind went wrong...": "Somethind went wrong...",
+  "Reload page": "Reload page"
 }
