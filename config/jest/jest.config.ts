@@ -15,12 +15,13 @@ export default {
 
     // The root directory that Jest should scan for tests and modules within
     rootDir: '../../',
+    modulePaths: ['<rootDir>src'],
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 
     // The glob patterns Jest uses to detect test files
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[jt]s?(x)',
     ],
-
     // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
     // The test environment that will be used for testing
@@ -41,9 +42,11 @@ export default {
 
     // An array of directory names to be searched recursively up from the requiring module's location
     moduleDirectories: [
-        'node_modules',
+        'node_modules', 'src',
     ],
-
+    moduleNameMapper: {
+        '\\.s?css$': 'identity-obj-proxy',
+    },
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
