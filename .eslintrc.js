@@ -51,7 +51,7 @@ module.exports = {
         'no-return-await': 'warn',
         'max-len': [
             'error',
-            { ignoreComments: true },
+            { ignoreComments: true, code: 100 },
         ],
     },
     globals: {
