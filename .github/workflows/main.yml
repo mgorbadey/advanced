@@ -22,22 +22,22 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: production build
+      # - name: production build
       -  run: npm run build:prod
 
-      - name: linting typescript
+      # - name: linting typescript
       -  run: npm run lint:ts
      
-      - name: linting css
+      # - name: linting css
       -  run: npm run lint:scss
 
-      - name: unit testing
+      # - name: unit testing
       -  run: npm run test:unit
 
-      - name: build storybook
+      # - name: build storybook
       -  run: npm run storybook:build
 
-      - name: screenshot testing
+      # - name: screenshot testing
       -  run: npm run test:loki:ci
 
         
