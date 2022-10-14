@@ -11,7 +11,6 @@ jobs:
    strategy:
     matrix:
        node-version: [ 17.x ]
-
    steps: 
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -21,24 +20,18 @@ jobs:
       
       - name: Install dependencies
         run: npm install
-
-      # - name: production build
-      -  run: npm run build:prod
-
-      # - name: linting typescript
-      -  run: npm run lint:ts
-     
-      # - name: linting css
-      -  run: npm run lint:scss
-
-      # - name: unit testing
-      -  run: npm run test:unit
-
-      # - name: build storybook
-      -  run: npm run storybook:build
-
-      # - name: screenshot testing
-      -  run: npm run test:loki:ci
+      - name: production build
+        run: npm run build:prod
+      - name: linting typescript
+        run: npm run lint:ts    
+      - name: linting css
+        run: npm run lint:scss
+      - name: unit testing
+        run: npm run test:unit
+      - name: build storybook
+        run: npm run storybook:build
+      - name: screenshot testing
+        run: npm run test:loki:ci
 
         
 
