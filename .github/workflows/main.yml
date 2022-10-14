@@ -35,8 +35,8 @@ jobs:
     if: steps.cache.outputs.cache-hit != 'true'
     run: npm install
 
-  - name: make production build
-     run: npm run build:prod
+  # - name: make production build
+  #    run: npm run build:prod
 
   - name: linting typescript
      run: npm run lint:ts
