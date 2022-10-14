@@ -1,5 +1,4 @@
 name: Linting, testing, building
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
  push:
    branches: [master]
@@ -7,30 +6,49 @@ on:
    branches: [master]
 
 jobs:
-  pipeline:
-  runs-on: ubuntu-latest
+  name: CI pipeline
+   runs-on: macos-latest
   strategy:
-   matrix:
+    matrix:
      node-version: [17.x]
+ 
 
   steps: 
-   - uses: actions/checkout@v2
-   - name: Setup Node.js ${{ matrix.node-version }}
-     uses: actions/setup-node@v1
-     with:
-      node-version: ${{ matrix.node-version }}
-   - name: install modules
-     run: npm install
+  - name: Setup Node.js environment
+        uses: actions/setup-node@v1.4.3
+        with:
+          node-version: ${{ matrix.node }}
+   
+  - name: Checkout master branch
+        uses: actions/checkout@v2
+
+  - name: Cache node_modules
+        uses: actions/cache@v2.1.0
+        with:
+          # A list of files, directories, and wildcard patterns to cache and restore
+          path: node_modules
+          # An explicit key for restoring and saving the cache
+          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/package-lock.json')) }}
+
+  - name: Install dependencies
+       if: steps.cache.outputs.cache-hit != 'true'
+      run: npm install
+
    - name: make production build
      run: npm run build:prod
+
    - name: linting typescript
      run: npm run lint:ts
+     
    - name: linting css
      run: npm run lint:scss
+
   - name: unit testing
      run: npm run test:unit
+
   - name: build storybook
      run: npm run storybook:build
+
   - name: screenshot testing
      run: npm run test:loki:ci
 
