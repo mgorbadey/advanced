@@ -1,11 +1,13 @@
 {
-  "Full_language":"RUSSIAN",
-  "Language":"RUS",
-  "Main Page":"Main Page",
+  "Full_language": "RUSSIAN",
+  "Language": "RUS",
+  "Main Page": "Main Page",
   "About": "About",
-  "Toggle":"Toggle",
+  "Toggle": "Toggle",
   "Page Not Found": "Page Not Found",
   "Somethind went wrong...": "Somethind went wrong...",
   "Reload page": "Reload page",
-  "Login": "Login"
+  "Login": "Login",
+  "Password": "Password",
+  "Username": "Username"
 }

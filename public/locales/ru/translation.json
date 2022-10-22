@@ -1,11 +1,13 @@
 {
-  "Full_language":"ENGLISH",
+  "Full_language": "ENGLISH",
   "Language": "ENG",
   "Main Page": "Главная страница",
   "About": "О сайте",
-  "Toggle":"Скрыть",
+  "Toggle": "Скрыть",
   "Page Not Found": "Страница не найдена",
   "Somethind went wrong...": "Что-то пошло не так...",
   "Reload page": "Перезагрузить страницу",
-  "Login": "Войти"
+  "Login": "Войти",
+  "Password": "Пароль",
+  "Username": "Логин"
 }
