@@ -9,5 +9,8 @@
   "Reload page": "Перезагрузить страницу",
   "Login": "Войти",
   "Password": "Пароль",
-  "Username": "Логин"
+  "Username": "Логин",
+  "Authorization form": "Форма авторизации",
+  "Incorrent username or password": "Неверный логин или пароль",
+  "Logout": "Выйти"
 }
