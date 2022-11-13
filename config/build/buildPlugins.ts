@@ -22,10 +22,10 @@ export function buildPlugins(
     ];
 
     if (isDev) {
-        plugins.push(
-            new webpack.HotModuleReplacementPlugin(),
-            new BundleAnalyzerPlugin({ openAnalyzer: isDev }),
-        );
+        plugins.push(new webpack.HotModuleReplacementPlugin());
+        plugins.push(new BundleAnalyzerPlugin({
+            openAnalyzer: isDev,
+        }));
     }
 
     return plugins;
