@@ -1,4 +1,4 @@
-import { useTheme } from 'app/providers/ThemeProvider';
+// import { useTheme } from 'app/providers/ThemeProvider';
 import React, {
     ReactNode, useRef, useState, useCallback, useEffect,
 } from 'react';
@@ -28,7 +28,7 @@ export const Modal = (props: ModalProps) => {
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
     const timeRef = useRef<ReturnType<typeof setTimeout>>();
-    const { theme } = useTheme();
+    // const { theme } = useTheme();
 
     useEffect(() => {
         if (isOpen) {

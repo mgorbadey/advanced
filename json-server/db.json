@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Mikhail",
+    "lastname": "Gorbadey",
+    "age": 29,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://avatars.githubusercontent.com/u/87561180?v=4"
+  }
 }
