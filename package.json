@@ -19,8 +19,8 @@
     "test:loki:json": "node scripts/generate-visual-json-report.js",
     "test:loki:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:loki:report": "npm run test:loki:json && npm run test:loki:html",
-    "storybook": "start-storybook -p 6006 -c ./config/.storybook",
-    "storybook:build": "build-storybook -c ./config/.storybook",
+    "storybook": "start-storybook -p 6006 -c ./config/storybook",
+    "storybook:build": "build-storybook -c ./config/storybook",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -97,6 +97,7 @@
     "react-router-dom": "^6.2.1"
   },
   "loki": {
+    "fetchFailIgnore": ".*",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",

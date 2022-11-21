@@ -1,9 +1,9 @@
-type Mods = Record<string, boolean | string> // special type constraining types of keys and values
+export type Mods = Record<string, boolean | string | undefined> // special type constraining types of keys and values
 
 export function classNames(
     mainClass: string,
     mods: Mods = {},
-    additionalClasses: string[] = [],
+    additionalClasses: Array<string | undefined> = [],
 ): string {
     return [
         mainClass,

@@ -6,7 +6,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 export default {
-    title: 'widgets/ThemeSwitcher',
+    title: 'widget/ThemeSwitcher',
     component: ThemeSwitcher,
     argTypes: {
         backgroundColor: { control: 'color' },
