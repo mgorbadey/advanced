@@ -13,5 +13,14 @@
   "Username": "Username",
   "Authorization form": "Authorization form",
   "Incorrent username or password": "Incorrent username or password",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Cancel": "Cancel",
+  "Edit": "Edit",
+  "Save": "Save",
+  "Age": "Age",
+  "City": "City",
+  "Nickname": "Nickname",
+  "Avatar link": "Avatar link",
+  "Select currency": "Select currency",
+  "Select country": "Select country"
 }

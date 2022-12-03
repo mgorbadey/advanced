@@ -35,7 +35,7 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['to', 'fallback', 'data-testid', 'name'],
+                ignoreAttribute: ['to', 'fallback', 'data-testid', 'name', 'alt'],
             },
         ],
         'import/no-unresolved': 'off',

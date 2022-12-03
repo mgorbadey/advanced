@@ -2,5 +2,7 @@
   "Profile": "Профиль",
   "Edit": "Редактировать",
   "First Name": "Имя",
-  "Last Name": "Фамилия"
+  "Last Name": "Фамилия",
+  "Something went wrong during profile loading":"Ошибка при загрузке профиля",
+  "Please reload page":"Обновите страницу"
 }

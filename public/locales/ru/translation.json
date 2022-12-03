@@ -13,5 +13,14 @@
   "Username": "Логин",
   "Authorization form": "Форма авторизации",
   "Incorrent username or password": "Неверный логин или пароль",
-  "Logout": "Выйти"
+  "Logout": "Выйти",
+  "Cancel": "Отменить",
+  "Edit": "Редактировать",
+  "Age": "Возраст",
+  "City": "Город",
+  "Nickname": "Ник",
+  "Avatar link": "Ссылка на аварат",
+  "Save": "Сохранить",
+  "Select currency": "Укажите валюту",
+  "Select country": "Выберите страну"
 }

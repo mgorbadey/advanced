@@ -2,5 +2,7 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "First Name": "First Name",
-  "Last Name": "Last Name"
+  "Last Name": "Last Name",
+  "Something went wrong during profile loading":"Something went wrong during profile loading",
+  "Please reload page":"Please reload page"
 }
