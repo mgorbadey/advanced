@@ -4,5 +4,18 @@
   "First Name": "First Name",
   "Last Name": "Last Name",
   "Something went wrong during profile loading":"Something went wrong during profile loading",
-  "Please reload page":"Please reload page"
+  "Please reload page":"Please reload page",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Age": "Age",
+  "City": "City",
+  "Nickname": "Nickname",
+  "Avatar link": "Avatar link",
+  "Select currency": "Select currency",
+  "Select country": "Select country",
+  "No data filled": "No data filled",
+  "Server error": "Server error",
+  "Incorrect first name or last name": "Incorrect first name or last name",
+  "Incorrect age": "Incorrect age",
+  "Incorrect city": "Incorrect city"
 }

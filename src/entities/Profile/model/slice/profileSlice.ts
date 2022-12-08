@@ -26,6 +26,7 @@ export const profileSlice = createSlice({
         cancelEdit: (state) => {
             state.readonly = true;
             state.form = state.data;
+            state.validateProfileErrors = undefined;
         },
     },
     extraReducers: (builder) => {
@@ -34,34 +35,28 @@ export const profileSlice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(
-                fetchProfileData.fulfilled,
-                (state, action: PayloadAction<Profile>) => {
-                    state.isLoading = false;
-                    state.data = action.payload;
-                    state.form = action.payload;
-                },
-            )
+            .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
+                state.isLoading = false;
+                state.data = action.payload;
+                state.form = action.payload;
+            })
             .addCase(fetchProfileData.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             })
             .addCase(updateProfileData.pending, (state) => {
-                state.error = undefined;
+                state.validateProfileErrors = undefined;
                 state.isLoading = true;
             })
-            .addCase(
-                updateProfileData.fulfilled,
-                (state, action: PayloadAction<Profile>) => {
-                    state.isLoading = false;
-                    state.data = action.payload;
-                    state.form = action.payload;
-                    state.readonly = true;
-                },
-            )
+            .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
+                state.isLoading = false;
+                state.data = action.payload;
+                state.form = action.payload;
+                state.readonly = true;
+            })
             .addCase(updateProfileData.rejected, (state, action) => {
                 state.isLoading = false;
-                state.error = action.payload;
+                state.validateProfileErrors = action.payload;
             });
     },
 });

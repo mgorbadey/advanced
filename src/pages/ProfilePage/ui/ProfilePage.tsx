@@ -2,12 +2,16 @@ import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import {
     fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadOnly,
+    getProfileValidateErrors,
     profileActions, ProfileCard, profileReducer,
 } from 'entities/Profile';
+import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers:ReducersList = {
@@ -15,14 +19,26 @@ const reducers:ReducersList = {
 };
 
 const ProfilePage = () => {
+    const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadOnly);
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorTranslates = {
+        [ValidateProfileError.NO_DATA]: t('No data filled'),
+        [ValidateProfileError.SERVER_ERROR]: t('Server error'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t('Incorrect first name or last name'),
+        [ValidateProfileError.INCORRECT_AGE]: t('Incorrect age'),
+        [ValidateProfileError.INCORRECT_CITY]: t('Incorrect city'),
+    };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstName = useCallback((value?:string) => {
@@ -61,6 +77,13 @@ const ProfilePage = () => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div>
                 <ProfilePageHeader />
+                {validateErrors?.length && validateErrors.map((err) => (
+                    <Text
+                        key={err}
+                        theme={TextTheme.ERROR}
+                        text={validateErrorTranslates[err]}
+                    />
+                ))}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}
