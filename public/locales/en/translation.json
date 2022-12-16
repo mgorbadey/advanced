@@ -13,5 +13,9 @@
   "Username": "Username",
   "Authorization form": "Authorization form",
   "Incorrent username or password": "Incorrent username or password",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Article not found": "Article not found",
+  "An error occured while loading the article": {
+    "": "An error occured while loading the article."
+  }
 }
