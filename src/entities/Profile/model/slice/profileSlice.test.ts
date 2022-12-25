@@ -22,6 +22,13 @@ describe('profileSlice.test', () => {
             .toEqual({ readonly: true });
     });
 
+    test('test update profile', () => {
+        const state: DeepPartial<ProfileSchema> = { form: { username: '123' } };
+
+        expect(profileReducer(state as ProfileSchema, profileActions.updateProfile({ username: '123456' })))
+            .toEqual({ form: { username: '123456' } });
+    });
+
     test('test cancel edit', () => {
         const state:DeepPartial<ProfileSchema> = { data, form: { username: '' } };
 
@@ -32,13 +39,6 @@ describe('profileSlice.test', () => {
                 data,
                 form: data,
             });
-    });
-
-    test('test update profile', () => {
-        const state: DeepPartial<ProfileSchema> = { form: { username: '123' } };
-
-        expect(profileReducer(state as ProfileSchema, profileActions.updateProfile({ username: '123456' })))
-            .toEqual({ form: { username: '123456' } });
     });
 
     test('test update profile service pending', () => {

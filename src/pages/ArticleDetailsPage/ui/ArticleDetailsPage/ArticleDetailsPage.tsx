@@ -12,7 +12,11 @@ interface ArticleDetailsPageProps {
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const { className } = props;
     const { t } = useTranslation();
-    const { id } = useParams<{id:string}>();
+    let { id } = useParams<{id:string}>();
+
+    if (__PROJECT__ === 'storybook') { // штука для нормальной работы сторибука
+        id = '1';
+    }
 
     if (!id) {
         return (
