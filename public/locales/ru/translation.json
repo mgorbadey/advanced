@@ -17,5 +17,7 @@
   "Article not found": "Статья не найдена",
   "An error occured while loading the article": {
     "": "Произошла ошибка при загрузке статьи."
-  }
+  },
+  "Comments": "Комментарии",
+  "No comments here yet": "Комментарии отсутствуют"
 }
