@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,18 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Комментарий которого не было в БД",
+      "id": "WESBLlD"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Второй Комментарий которого не было в БД",
+      "id": "r0EFoMP"
     }
   ],
   "users": [
@@ -118,14 +132,28 @@
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnL-6fb5PhgkCkH3odiqgPmhqoWm6HeRjwQ&usqp=CAU"
     }
   ],
-  "profile": {
-    "firstname": "Mikhail",
-    "lastname": "Gorbadey",
-    "age": 29,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://avatars.githubusercontent.com/u/87561180?v=4"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Mikhail",
+      "lastname": "Gorbadey",
+      "age": 29,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://avatars.githubusercontent.com/u/87561180?v=4"
+    },
+    {
+      "id": "2",
+      "firstname": "Mikhail",
+      "lastname": "Bradobrey",
+      "age": 29,
+      "currency": "USD",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "user",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnL-6fb5PhgkCkH3odiqgPmhqoWm6HeRjwQ&usqp=CAU"
+    }
+  ]
 }

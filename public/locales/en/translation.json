@@ -4,6 +4,7 @@
   "Main Page": "Main Page",
   "Profile": "Profile",
   "About": "About",
+  "Articles":"Articles",
   "Toggle": "Toggle",
   "Page Not Found": "Page Not Found",
   "Somethind went wrong...": "Somethind went wrong...",
@@ -15,9 +16,9 @@
   "Incorrent username or password": "Incorrent username or password",
   "Logout": "Logout",
   "Article not found": "Article not found",
-  "An error occured while loading the article": {
-    "": "An error occured while loading the article."
-  },
+  "An error occured while loading the article": "An error occured while loading the article",
   "Comments": "Comments",
-  "No comments here yet": "No comments here yet"
+  "No comments here yet": "No comments here yet",
+  "Enter your comment": "Enter your comment",
+  "Send": "Send"
 }

@@ -9,21 +9,22 @@ export enum ValidateProfileError{
   INCORRECT_CITY = 'INCORRECT_CITY',
 }
 export interface Profile {
-  firstname?: string,
-  lastname?: string,
-  age?: number,
-  currency?: Currency,
-  country?: Country,
-  city?: string,
-  username?: string,
+  id?: string;
+  firstname?: string;
+  lastname?: string;
+  age?: number;
+  currency?: Currency;
+  country?: Country;
+  city?: string;
+  username?: string;
   avatar?: string
 }
 
 export interface ProfileSchema {
-  data?: Profile,
-  form?: Profile,
-  isLoading: boolean,
-  error?: string,
-  readonly: boolean,
+  data?: Profile;
+  form?: Profile;
+  isLoading: boolean;
+  error?: string;
+  readonly: boolean;
   validateProfileErrors?: ValidateProfileError[]
 }
