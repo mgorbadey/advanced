@@ -25,6 +25,11 @@ Primary.args = {
             text: 'Comment 2',
             user: { id: '1', username: 'Petya' },
         },
+        {
+            id: '3',
+            text: 'Comment 3',
+            user: { id: '1', username: 'Vova' },
+        },
     ],
 };
 
