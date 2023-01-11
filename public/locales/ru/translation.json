@@ -4,7 +4,7 @@
   "Main Page": "Главная страница",
   "Profile": "Профиль",
   "About": "О сайте",
-  "Articles":"Статьи",
+  "Articles": "Статьи",
   "Toggle": "Скрыть",
   "Page Not Found": "Страница не найдена",
   "Somethind went wrong...": "Что-то пошло не так...",
@@ -22,5 +22,7 @@
   "Comments": "Комментарии",
   "No comments here yet": "Комментарии отсутствуют",
   "Enter your comment": "Введите комментарий",
-  "Send": "Отправить"
+  "Send": "Отправить",
+  "Read": "Читать далее",
+  "Back to list": "Назад к списку"
 }

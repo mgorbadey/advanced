@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+import { ArticleList, ArticleView } from 'entities/Article';
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticlesPage.module.scss';
@@ -7,14 +9,15 @@ interface ArticlesPageProps {
 }
 
 const ArticlesPage = (props: ArticlesPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     return (
-        // eslint-disable-next-line i18next/no-literal-string
         <div className={classNames(cls.ArticlesPage, {}, [className])}>
-            ARTICLES PAGE
+            <ArticleList
+                isLoading
+                view={ArticleView.LIST}
+                articles={[]}
+            />
         </div>
     );
 };
