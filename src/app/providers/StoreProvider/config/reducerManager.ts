@@ -1,7 +1,9 @@
 import {
     AnyAction, combineReducers, ReducersMapObject, Reducer,
 } from '@reduxjs/toolkit';
-import { ReducerManager, StateSchema, StateSchemaKey } from './StateSchema';
+import {
+    MountedReducers, ReducerManager, StateSchema, StateSchemaKey,
+} from './StateSchema';
 
 export function createReducerManager(initialReducers :ReducersMapObject<StateSchema>): ReducerManager {
     // Create an object which maps keys to reducers
@@ -12,10 +14,11 @@ export function createReducerManager(initialReducers :ReducersMapObject<StateSch
 
     // An array which is used to delete state keys when reducers are removed
     let keysToRemove: StateSchemaKey[] = [];
+    const mountedReducers: MountedReducers = {};
 
     return {
         getReducerMap: () => reducers,
-
+        getMountedReducers: () => mountedReducers,
         // The root reducer function exposed by this object
         // This will be passed to the store
         reduce: (state: StateSchema, action: AnyAction) => {
@@ -25,10 +28,8 @@ export function createReducerManager(initialReducers :ReducersMapObject<StateSch
                 keysToRemove.forEach((key) => {
                     delete state[key];
                 });
-
                 keysToRemove = [];
             }
-
             // Delegate to the combined reducer
             return combinedReducer(state, action);
         },
@@ -38,10 +39,9 @@ export function createReducerManager(initialReducers :ReducersMapObject<StateSch
             if (!key || reducers[key]) {
                 return;
             }
-
             // Add the reducer to the reducer mapping
             reducers[key] = reducer;
-
+            mountedReducers[key] = true;
             // Generate a new combined reducer
             combinedReducer = combineReducers(reducers);
         },
@@ -51,13 +51,11 @@ export function createReducerManager(initialReducers :ReducersMapObject<StateSch
             if (!key || !reducers[key]) {
                 return;
             }
-
             // Remove it from the reducer mapping
             delete reducers[key];
-
             // Add the key to the list of keys to clean up
             keysToRemove.push(key);
-
+            mountedReducers[key] = false;
             // Generate a new combined reducer
             combinedReducer = combineReducers(reducers);
         },
