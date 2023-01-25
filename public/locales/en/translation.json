@@ -22,5 +22,18 @@
   "Enter your comment": "Enter your comment",
   "Send": "Send",
   "Read": "Read",
-  "Back to list": "Back to list"
+  "Back to list": "Back to list",
+  "Sort by": "Sort by",
+  "Search": "Search",
+  "Order": "Order",
+  "ascending": "ascending",
+  "descending": "descending",
+  "date created": "date created",
+  "title": "title",
+  "views": "views",
+  "All": "All",
+  "IT": "IT",
+  "Economics": "Economics",
+  "Science": "Science",
+  "No articles found!": "No articles found!"
 }
