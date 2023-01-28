@@ -35,7 +35,7 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['to', 'fallback', 'data-testid', 'name', 'alt'],
+                ignoreAttribute: ['to', 'fallback', 'data-testid', 'name', 'alt', 'target'],
             },
         ],
         'import/no-unresolved': 'off',
@@ -56,7 +56,7 @@ module.exports = {
         'no-return-await': 'warn',
         'max-len': [
             'error',
-            { ignoreComments: true, code: 120 },
+            { ignoreComments: true, code: 125 },
         ],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
