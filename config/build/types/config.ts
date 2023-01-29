@@ -7,10 +7,12 @@ export interface BuildEnv {
 }
 
 export interface BuildPaths {
-  entry: string
-  build: string
-  html: string
-  src: string
+  entry: string;
+  build: string;
+  html: string;
+  src: string;
+  locales: string;
+  buildLocales: string;
 }
 
 export interface BuildOptions {
