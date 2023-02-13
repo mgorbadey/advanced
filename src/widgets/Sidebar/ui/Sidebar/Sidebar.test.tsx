@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
-import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
 import { screen, fireEvent } from '@testing-library/react';
 import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
+import { Sidebar } from './Sidebar';
 
 describe('Sidebar tests', () => {
     test('Sidebar test', () => {
