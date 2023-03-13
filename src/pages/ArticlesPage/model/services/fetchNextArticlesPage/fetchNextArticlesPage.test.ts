@@ -10,6 +10,7 @@ describe('fetchNextArticlesPage.test', () => {
                 page: 2,
                 ids: [],
                 entities: {},
+                limit: 5,
                 isLoading: false,
                 hasMore: true,
             },
