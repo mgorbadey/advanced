@@ -21,7 +21,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
             <Loader />
         );
     }
-    if (error) {
+    if (error || !articles) {
         return (
             <Text
                 title={t('Recommendations not found')}
