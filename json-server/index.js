@@ -34,7 +34,7 @@ server.post('/login', (req, res) => {
 
         return res.status(403).json({ message: 'User not found' });
     } catch (e) {
-        console.log(e);
+        console.error(e);
         return res.status(500).json({ message: e.message });
     }
 });
