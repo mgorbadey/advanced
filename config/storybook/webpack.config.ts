@@ -12,7 +12,6 @@ export default ({ config }: {config: webpack.Configuration}) => {
         locales: '',
         buildLocales: '',
     };
-
     config!.resolve!.modules = [paths.src, 'node_modules'];
     config!.resolve!.extensions!.push('.ts', '.tsx');
     // @ts-ignore
@@ -32,7 +31,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
 
     config!.plugins!.push(new DefinePlugin({
         __IS_DEV__: true,
-        __API__: JSON.stringify(''),
+        __API__: JSON.stringify('https://testapi.com'),
         __PROJECT__: JSON.stringify('storybook'),
     }));
 
