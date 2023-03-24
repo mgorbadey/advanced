@@ -37,7 +37,7 @@ module.exports = {
             {
                 markupOnly: true,
                 ignoreAttribute: [
-                    'to', 'fallback', 'data-testid', 'name', 'alt', 'target', 'justify', 'direction', 'role', 'as',
+                    'to', 'fallback', 'data-testid', 'name', 'alt', 'target', 'justify', 'direction', 'role', 'as', 'border',
                 ],
             },
         ],
