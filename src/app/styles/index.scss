@@ -4,7 +4,8 @@
 @import "themes/dark";
 @import "themes/green";
 
-body {
+body,
+.app_drawer {
     font: var(--font-m);
     color: var(--primary-color);
 }
