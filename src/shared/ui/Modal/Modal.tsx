@@ -1,8 +1,6 @@
-import {
-    ReactNode,
-} from 'react';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { useModal } from 'shared/lib/hooks/useModal/useModal';
+import { ReactNode } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
@@ -40,6 +38,5 @@ export const Modal = (props: ModalProps) => {
                 </div>
             </div>
         </Portal>
-
     );
 };

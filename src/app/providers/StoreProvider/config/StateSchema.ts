@@ -3,16 +3,16 @@ import {
     AnyAction, ReducersMapObject, Reducer, EnhancedStore,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
-import { CounterSchema } from 'entities/Counter';
-import { UserSchema } from 'entities/User';
-import { ArticleDetailsSchema } from 'entities/Article';
-import { LoginSchema } from 'features/AuthByUsername';
-import { AddCommentFormSchema } from 'features/addCommentForm';
-import { RestoreScrollSchema } from 'features/restoreScroll';
-import { rtkApi } from 'shared/api/rtkApi';
-import { ProfileSchema } from 'features/editableProfileCard';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { CounterSchema } from '@/entities/Counter';
+import { UserSchema } from '@/entities/User';
+import { ArticleDetailsSchema } from '@/entities/Article';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { AddCommentFormSchema } from '@/features/addCommentForm';
+import { RestoreScrollSchema } from '@/features/restoreScroll';
+import { rtkApi } from '@/shared/api/rtkApi';
+import { ProfileSchema } from '@/features/editableProfileCard';
 
 export interface StateSchema {
   counter: CounterSchema;
