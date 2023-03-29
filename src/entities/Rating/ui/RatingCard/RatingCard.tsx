@@ -12,12 +12,13 @@ import Button, { ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
 
 interface RatingCardProps {
-  className?: string;
-  title?: string;
-  feedbackTitle?: string;
-  hasFeedback?: boolean;
-  onAccept?: (starsCount: number, feedback?: string) => void;
-  onCancel?: (starsCount: number) => void;
+    className?: string;
+    title?: string;
+    feedbackTitle?: string;
+    hasFeedback?: boolean;
+    onAccept?: (starsCount: number, feedback?: string) => void;
+    onCancel?: (starsCount: number) => void;
+    rate?: number
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
@@ -29,9 +30,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
         hasFeedback,
         onAccept,
         onCancel,
+        rate = 0,
     } = props;
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
 
     const onSelectStars = useCallback((selectedStarsCount:number) => {
@@ -65,10 +67,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
     );
 
     return (
-        <Card className={classNames('', {}, [className])}>
+        <Card max className={classNames('', {}, [className])}>
             <VStack align="center" gap="8">
-                <Text title={title} />
-                <StarRating size={40} onSelect={onSelectStars} />
+                <Text title={starsCount ? t('Thanks for feedback!') : title} />
+                <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>
