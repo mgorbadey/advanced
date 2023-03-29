@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { Menu } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -33,8 +34,8 @@ export const Dropdown = (props: DropdownProps) => {
                 {trigger}
             </Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
-                {items.map((item) => {
-                    const content = ({ active }: {active: boolean}) => (
+                {items.map((item, index) => {
+                    const content = ({ active }: { active: boolean }) => (
                         <button
                             type="button"
                             disabled={item.disabled}
@@ -47,14 +48,23 @@ export const Dropdown = (props: DropdownProps) => {
 
                     if (item.href) {
                         return (
-                            <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+                            <Menu.Item
+                                key={`dropdown-key${index}`}
+                                as={AppLink}
+                                to={item.href}
+                                disabled={item.disabled}
+                            >
                                 {content}
                             </Menu.Item>
                         );
                     }
 
                     return (
-                        <Menu.Item as={Fragment} disabled={item.disabled}>
+                        <Menu.Item
+                            key={`dropdown-key${index}`}
+                            as={Fragment}
+                            disabled={item.disabled}
+                        >
                             {content}
                         </Menu.Item>
                     );
