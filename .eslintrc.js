@@ -69,7 +69,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'linebreak-style': 'off',
-        'fsd-path-checker-plugin/path-checker': 'error',
+        'fsd-path-checker-plugin/path-checker': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,
