@@ -15,6 +15,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
     config!.resolve!.alias = { '@': path.resolve(__dirname, '..', '..', 'src') };
     config!.resolve!.modules = [paths.src, 'node_modules'];
     config!.resolve!.extensions!.push('.ts', '.tsx');
+    config!.resolve!.alias = {
+        ...config!.resolve!.alias,
+        '@': paths.src,
+    };
     // @ts-ignore
     config!.module!.rules = config.module!.rules!.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test as string)) {
