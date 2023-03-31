@@ -70,6 +70,8 @@ module.exports = {
         'no-undef': 'off',
         'linebreak-style': 'off',
         'fsd-path-checker-plugin/path-checker': ['error', { alias: '@' }],
+        'fsd-path-checker-plugin/public-api-imports': ['error', { alias: '@' }],
+
     },
     globals: {
         __IS_DEV__: true,
