@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import { LoginModal } from '@/features/AuthByUsername';
+import { LoginModal } from '@/features/authByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';

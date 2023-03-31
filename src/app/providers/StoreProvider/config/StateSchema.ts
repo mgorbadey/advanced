@@ -8,7 +8,7 @@ import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { ArticleDetailsSchema } from '@/entities/Article';
-import { LoginSchema } from '@/features/AuthByUsername';
+import { LoginSchema } from '@/features/authByUsername';
 import { AddCommentFormSchema } from '@/features/addCommentForm';
 import { RestoreScrollSchema } from '@/features/restoreScroll';
 import { rtkApi } from '@/shared/api/rtkApi';
