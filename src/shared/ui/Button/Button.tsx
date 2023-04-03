@@ -60,5 +60,3 @@ export const Button = memo((props:ButtonProps) => {
         </button>
     );
 });
-
-export default Button;
