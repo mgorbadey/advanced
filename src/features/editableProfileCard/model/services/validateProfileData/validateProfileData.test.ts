@@ -1,7 +1,9 @@
+import { ValidateProfileError } from '../../consts/editableProfileCardconsts';
+
+import { validateProfileData } from './validateProfileData';
+
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { ValidateProfileError } from '../../consts/editableProfileCardconsts';
-import { validateProfileData } from './validateProfileData';
 
 const data = {
     username: 'gormisha',

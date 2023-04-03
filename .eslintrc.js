@@ -24,6 +24,7 @@ module.exports = {
         'react-hooks',
         'fsd-path-checker-plugin',
         'unused-imports',
+        'import',
     ],
     rules: {
         indent: [2, 4],
@@ -86,6 +87,23 @@ module.exports = {
             },
         ],
         'unused-imports/no-unused-imports': 'error',
+        'import/order': [
+            'error',
+            {
+                pathGroups: [
+                    {
+                        pattern: '@/**',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                ],
+                'newlines-between': 'always',
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: false,
+                },
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
