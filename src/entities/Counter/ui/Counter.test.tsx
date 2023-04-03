@@ -1,10 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import { userEvent } from '@storybook/testing-library';
 import { screen } from '@testing-library/react';
-
-import { Counter } from './Counter';
-
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import { Counter } from './Counter';
 
 describe('Counter tests', () => {
     test('Counter test', () => {

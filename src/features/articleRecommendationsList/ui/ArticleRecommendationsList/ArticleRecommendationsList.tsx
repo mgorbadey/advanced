@@ -1,8 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
-
 import { ArticleList } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Loader } from '@/shared/ui/Loader';

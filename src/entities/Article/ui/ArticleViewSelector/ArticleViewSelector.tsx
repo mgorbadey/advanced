@@ -1,14 +1,11 @@
 import { memo } from 'react';
-
 import { ArticleView } from '../../model/consts/articleConsts';
-
-import cls from './ArticleViewSelector.module.scss';
-
 import BlockIcon from '@/shared/assets/icons/block.svg';
 import ListIcon from '@/shared/assets/icons/list.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
+import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
   className?: string,

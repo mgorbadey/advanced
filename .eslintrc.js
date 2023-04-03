@@ -96,8 +96,13 @@ module.exports = {
                         group: 'internal',
                         position: 'after',
                     },
+                    {
+                        pattern: './**',
+                        group: 'internal',
+                        position: 'after',
+                    },
                 ],
-                'newlines-between': 'always',
+                'newlines-between': 'never',
                 alphabetize: {
                     order: 'asc',
                     caseInsensitive: false,

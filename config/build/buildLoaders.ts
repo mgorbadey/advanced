@@ -1,5 +1,4 @@
 import webpack from 'webpack';
-
 import { buildBabelLoader } from './loaders/buildBabelLoader';
 import { buildCssLoader } from './loaders/buildCssLoader';
 import { BuildOptions } from './types/config';
