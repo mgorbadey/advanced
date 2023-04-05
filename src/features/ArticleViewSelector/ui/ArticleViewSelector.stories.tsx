@@ -3,7 +3,7 @@ import React from 'react';
 import { ArticleViewSelector } from './ArticleViewSelector';
 
 export default {
-    title: 'entities/ArticleViewSelector',
+    title: 'features/ArticleViewSelector',
     component: ArticleViewSelector,
     argTypes: {
         backgroundColor: { control: 'color' },

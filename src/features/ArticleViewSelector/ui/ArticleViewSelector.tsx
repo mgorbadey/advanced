@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { ArticleView } from '../../model/consts/articleConsts';
+import { ArticleView } from '../../../entities/Article/model/consts/articleConsts';
 import BlockIcon from '@/shared/assets/icons/block.svg';
 import ListIcon from '@/shared/assets/icons/list.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
