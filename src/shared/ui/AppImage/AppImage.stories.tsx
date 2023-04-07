@@ -1,5 +1,5 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
 import { AppImage } from './AppImage';
 
 export default {
@@ -10,7 +10,7 @@ export default {
     },
 } as ComponentMeta < typeof AppImage>;
 
-const Template: ComponentStory<typeof AppImage> = (args) => <AppImage {...args } />;
+const Template: ComponentStory<typeof AppImage> = (args) => <AppImage {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};
