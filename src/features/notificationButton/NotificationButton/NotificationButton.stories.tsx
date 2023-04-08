@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { NotificationButton } from './NotificationButton';
 
 export default {
@@ -14,3 +15,4 @@ const Template: ComponentStory<typeof NotificationButton> = (args) => <Notificat
 
 export const Primary = Template.bind({});
 Primary.args = {};
+Primary.decorators = [StoreDecorator({})];
