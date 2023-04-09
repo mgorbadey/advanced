@@ -101,7 +101,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         if: always()
         with:
-          path: '.loki'
+          path: 'reports'
 
       - name: Deploy to GitHub Pages
         id: deployment
