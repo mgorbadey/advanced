@@ -16,16 +16,16 @@ describe('User visits Article Details page', () => {
     it('and sees article\'s content', () => {
         cy.getByTestId('ArticleDetails.Info').should('exist');
     });
-    it.skip('and sees recommendations', () => {
+    it('and sees recommendations', () => {
         cy.getByTestId('ArticleRecommendationsList').should('exist');
     });
-    it.skip('and leaves a comment', () => {
+    it('and leaves a comment', () => {
         cy.getByTestId('ArticleDetails.Info');
         cy.getByTestId('AddCommentForm').scrollIntoView();
         cy.addComment('Test comment');
         cy.getByTestId('CommentCard.Content').should('have.length', 1);
     });
-    it.skip('and gives a rating with feedback', () => {
+    it('and gives a rating with feedback', () => {
         cy.getByTestId('ArticleDetails.Info');
         cy.getByTestId('RatingCard').scrollIntoView();
         cy.setRate(4, 'Test feedback');

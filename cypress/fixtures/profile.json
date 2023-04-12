@@ -1,0 +1,11 @@
+{
+    "id": "1",
+    "firstname": "TestUser",
+    "lastname": "TestUser",
+    "age": 29,
+    "currency": "USD",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "user",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnL-6fb5PhgkCkH3odiqgPmhqoWm6HeRjwQ&usqp=CAU"
+}
