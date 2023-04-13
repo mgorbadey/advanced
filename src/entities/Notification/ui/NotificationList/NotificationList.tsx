@@ -7,7 +7,7 @@ import { VStack } from '@/shared/ui/Stack';
 import cls from './NotificationList.module.scss';
 
 interface NotificationListProps {
-  className?: string,
+    className?: string;
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {

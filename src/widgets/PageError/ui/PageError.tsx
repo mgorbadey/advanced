@@ -4,7 +4,7 @@ import { Button } from '@/shared/ui/Button';
 import cls from './PageError.module.scss';
 
 interface PageErrorProps {
-  className?: string,
+    className?: string;
 }
 
 export const PageError = ({ className }: PageErrorProps) => {
@@ -17,9 +17,7 @@ export const PageError = ({ className }: PageErrorProps) => {
     return (
         <div className={classNames(cls.PageError, {}, [className])}>
             <p>{t('Somethind went wrong...')}</p>
-            <Button onClick={reloadPage}>
-                {t('Reload page')}
-            </Button>
+            <Button onClick={reloadPage}>{t('Reload page')}</Button>
         </div>
     );
 };

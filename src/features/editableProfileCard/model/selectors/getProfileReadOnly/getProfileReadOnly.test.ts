@@ -3,7 +3,7 @@ import { getProfileReadOnly } from './getProfileReadOnly';
 
 describe('getProfileReadOnly.test', () => {
     test('should return "readonly" status', () => {
-        const state:DeepPartial<StateSchema> = {
+        const state: DeepPartial<StateSchema> = {
             profile: {
                 readonly: true,
             },
@@ -11,7 +11,7 @@ describe('getProfileReadOnly.test', () => {
         expect(getProfileReadOnly(state as StateSchema)).toEqual(true);
     });
     test('should work with empty state', () => {
-        const state:DeepPartial<StateSchema> = {};
+        const state: DeepPartial<StateSchema> = {};
         expect(getProfileReadOnly(state as StateSchema)).toEqual(undefined);
     });
 });

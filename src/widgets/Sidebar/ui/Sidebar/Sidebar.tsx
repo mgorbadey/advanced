@@ -10,7 +10,7 @@ import { VStack } from '@/shared/ui/Stack';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
-  className?: string
+    className?: string;
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
@@ -21,22 +21,24 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         setCollapsed((prev) => !prev);
     };
 
-    const itemList = useMemo(() => sidebarItems.map((item) => (
-        <SidebarItem
-            key={item.path}
-            item={item}
-            collapsed={collapsed}
-        />
-    )), [collapsed, sidebarItems]);
+    const itemList = useMemo(
+        () =>
+            sidebarItems.map((item) => (
+                <SidebarItem
+                    key={item.path}
+                    item={item}
+                    collapsed={collapsed}
+                />
+            )),
+        [collapsed, sidebarItems],
+    );
 
     return (
         <section
             data-testid="sidebar"
-            className={classNames(
-                cls.Sidebar,
-                { [cls.collapsed]: collapsed },
-                [className],
-            )}
+            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
+                className,
+            ])}
         >
             <Button
                 data-testid="sidebar-toggle"

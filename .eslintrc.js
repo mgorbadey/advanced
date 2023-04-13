@@ -8,6 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
+        'prettier',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -27,9 +28,6 @@ module.exports = {
         'import',
     ],
     rules: {
-        indent: [2, 4],
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
         'react/jsx-filename-extension': [
             'error',
             { extensions: ['.js', '.jsx', '.tsx'] },
@@ -39,8 +37,18 @@ module.exports = {
             {
                 markupOnly: true,
                 ignoreAttribute: [
-                    'to', 'fallback', 'data-testid', 'name', 'alt',
-                    'target', 'justify', 'direction', 'role', 'as', 'border', 'align',
+                    'to',
+                    'fallback',
+                    'data-testid',
+                    'name',
+                    'alt',
+                    'target',
+                    'justify',
+                    'direction',
+                    'role',
+                    'as',
+                    'border',
+                    'align',
                 ],
             },
         ],
@@ -60,10 +68,7 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'no-return-await': 'warn',
-        'max-len': [
-            'error',
-            { ignoreComments: true, code: 125 },
-        ],
+        'max-len': ['error', { ignoreComments: true, code: 125 }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
@@ -76,7 +81,11 @@ module.exports = {
             'error',
             {
                 alias: '@',
-                testFilePatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+                testFilePatterns: [
+                    '**/*.test.*',
+                    '**/*.stories.*',
+                    '**/StoreDecorator.tsx',
+                ],
             },
         ],
         'fsd-path-checker-plugin/layer-imports': [
@@ -109,6 +118,7 @@ module.exports = {
                 },
             },
         ],
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
     },
     globals: {
         __IS_DEV__: true,

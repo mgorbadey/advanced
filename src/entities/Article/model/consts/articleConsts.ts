@@ -1,22 +1,22 @@
 export enum ArticleSortField {
-  VIEWS = 'views',
-  TITLE = 'title',
-  CREATED = 'createdAt'
+    VIEWS = 'views',
+    TITLE = 'title',
+    CREATED = 'createdAt',
 }
 
 export enum ArticleBlockType {
-  CODE = 'CODE',
-  TEXT = 'TEXT',
-  IMAGE = 'IMAGE'
+    CODE = 'CODE',
+    TEXT = 'TEXT',
+    IMAGE = 'IMAGE',
 }
 export enum ArticleType {
-  ALL = 'ALL',
-  IT = 'IT',
-  SCIENCE = 'SCIENCE',
-  ECONOMICS = 'ECONOMICS'
+    ALL = 'ALL',
+    IT = 'IT',
+    SCIENCE = 'SCIENCE',
+    ECONOMICS = 'ECONOMICS',
 }
 
 export enum ArticleView {
-  LIST = 'LIST',
-  BLOCK = 'BLOCK',
+    LIST = 'LIST',
+    BLOCK = 'BLOCK',
 }

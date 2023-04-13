@@ -11,9 +11,11 @@ export default {
         backgroundColor: { control: 'color' },
     },
     decorators: [withMock],
-} as ComponentMeta < typeof NotificationList>;
+} as ComponentMeta<typeof NotificationList>;
 
-const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />;
+const Template: ComponentStory<typeof NotificationList> = (args) => (
+    <NotificationList {...args} />
+);
 
 export const WithNotifications = Template.bind({});
 WithNotifications.args = {};

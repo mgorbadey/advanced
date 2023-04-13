@@ -11,36 +11,38 @@ interface ArticleRecommendationsListProps {
     className?: string;
 }
 
-export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
-    const { className } = props;
-    const { t } = useTranslation();
-    const { data: articles, isLoading, error } = useArticleRecommendationsList(3);
+export const ArticleRecommendationsList = memo(
+    (props: ArticleRecommendationsListProps) => {
+        const { className } = props;
+        const { t } = useTranslation();
+        const {
+            data: articles,
+            isLoading,
+            error,
+        } = useArticleRecommendationsList(3);
 
-    if (isLoading) {
-        return (
-            <Loader />
-        );
-    }
-    if (error || !articles) {
-        return (
-            <Text
-                title={t('Recommendations not found')}
-                theme={TextTheme.ERROR}
-                size={TextSize.M}
-            />
-        );
-    }
+        if (isLoading) {
+            return <Loader />;
+        }
+        if (error || !articles) {
+            return (
+                <Text
+                    title={t('Recommendations not found')}
+                    theme={TextTheme.ERROR}
+                    size={TextSize.M}
+                />
+            );
+        }
 
-    return (
-        <VStack data-testid="ArticleRecommendationsList" gap="8" className={classNames('', {}, [className])}>
-            <Text
-                size={TextSize.L}
-                title={t('Recommended')}
-            />
-            <ArticleList
-                articles={articles}
-                target="_blank"
-            />
-        </VStack>
-    );
-});
+        return (
+            <VStack
+                data-testid="ArticleRecommendationsList"
+                gap="8"
+                className={classNames('', {}, [className])}
+            >
+                <Text size={TextSize.L} title={t('Recommended')} />
+                <ArticleList articles={articles} target="_blank" />
+            </VStack>
+        );
+    },
+);

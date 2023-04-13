@@ -9,25 +9,32 @@ import { DropdownDirection } from '@/shared/types/ui';
 import cls from './ListBox.module.scss';
 
 export interface ListBoxItem {
-  value: string;
-  content: ReactNode;
-  disabled?: boolean;
+    value: string;
+    content: ReactNode;
+    disabled?: boolean;
 }
 
-interface ListBoxProps{
-  items?: ListBoxItem[];
-  className?: string;
-  value?: string;
-  defaultValue?: string;
-  onChange: (value: string) => void;
-  readonly?: boolean;
-  direction?: DropdownDirection;
-  label?: string;
+interface ListBoxProps {
+    items?: ListBoxItem[];
+    className?: string;
+    value?: string;
+    defaultValue?: string;
+    onChange: (value: string) => void;
+    readonly?: boolean;
+    direction?: DropdownDirection;
+    label?: string;
 }
 
 export function ListBox(props: ListBoxProps) {
     const {
-        items, className, value, defaultValue, onChange, readonly, direction = 'bottom right', label,
+        items,
+        className,
+        value,
+        defaultValue,
+        onChange,
+        readonly,
+        direction = 'bottom right',
+        label,
     } = props;
 
     const optionsClasses = [mapDirectionClass[direction]];
@@ -37,17 +44,23 @@ export function ListBox(props: ListBoxProps) {
             {label && <span>{`${label}>`}</span>}
             <HeadlessListBox
                 as="div"
-                className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
+                className={classNames(cls.ListBox, {}, [
+                    className,
+                    popupCls.popup,
+                ])}
                 value={value}
                 onChange={onChange}
                 disabled={readonly}
             >
-                <HeadlessListBox.Button disabled={readonly} className={popupCls.trigger}>
-                    <Button disabled={readonly}>
-                        {value ?? defaultValue}
-                    </Button>
+                <HeadlessListBox.Button
+                    disabled={readonly}
+                    className={popupCls.trigger}
+                >
+                    <Button disabled={readonly}>{value ?? defaultValue}</Button>
                 </HeadlessListBox.Button>
-                <HeadlessListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
+                <HeadlessListBox.Options
+                    className={classNames(cls.options, {}, optionsClasses)}
+                >
                     {items?.map((item) => (
                         <HeadlessListBox.Option
                             key={item.value}
@@ -56,13 +69,11 @@ export function ListBox(props: ListBoxProps) {
                             as={Fragment}
                         >
                             {({ active }) => (
-                                <li className={classNames(
-                                    cls.item,
-                                    {
+                                <li
+                                    className={classNames(cls.item, {
                                         [popupCls.active]: active,
                                         [popupCls.disabled]: item.disabled,
-                                    },
-                                )}
+                                    })}
                                 >
                                     {item.content}
                                 </li>

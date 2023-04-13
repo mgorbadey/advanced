@@ -2,14 +2,16 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
-    getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView,
+    getArticlesPageError,
+    getArticlesPageIsLoading,
+    getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { getArticles } from '../../model/slice/articlesPageSlice';
 import { ArticleList } from '@/entities/Article';
 import { Text } from '@/shared/ui/Text';
 
 interface ArticleInfiniteListProps {
-  className?: string,
+    className?: string;
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
@@ -21,9 +23,7 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
     const view = useSelector(getArticlesPageView);
 
     if (error) {
-        return (
-            <Text title={t('An error occured while loadind articles')} />
-        );
+        return <Text title={t('An error occured while loadind articles')} />;
     }
 
     return (

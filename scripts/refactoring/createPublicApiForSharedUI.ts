@@ -17,16 +17,26 @@ componentsDirs?.forEach((directory) => {
 
     if (!indexFile) {
         const sourceCode = `export * from './${directory.getBaseName()}'`;
-        const file = directory.createSourceFile(indexFilePath, sourceCode, { overwrite: true });
+        const file = directory.createSourceFile(indexFilePath, sourceCode, {
+            overwrite: true,
+        });
         file.save();
     }
 });
 
 function isAbsolute(value: string): boolean {
-    const layers = ['app', 'pages', 'widgets', 'features', 'entities', 'shared'];
+    const layers = [
+        'app',
+        'pages',
+        'widgets',
+        'features',
+        'entities',
+        'shared',
+    ];
     if (layers.some((layer) => value.startsWith(layer))) {
         return true;
-    } return false;
+    }
+    return false;
 }
 
 files.forEach((sourceFile) => {

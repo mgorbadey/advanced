@@ -10,9 +10,9 @@ import { Text } from '@/shared/ui/Text';
 import cls from './CommentCard.module.scss';
 
 interface CommentCardProps {
-  className?: string,
-  comment?: Comment;
-  isLoading?: boolean;
+    className?: string;
+    comment?: Comment;
+    isLoading?: boolean;
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
@@ -24,11 +24,18 @@ export const CommentCard = memo((props: CommentCardProps) => {
                 data-testid="CommentCard.Loading"
                 gap="8"
                 max
-                className={classNames(cls.CommentCard, {}, [className, cls.loading])}
+                className={classNames(cls.CommentCard, {}, [
+                    className,
+                    cls.loading,
+                ])}
             >
                 <div className={cls.header}>
                     <Skeleton width={30} height={30} border="50%" />
-                    <Skeleton className={cls.username} width={100} height={16} />
+                    <Skeleton
+                        className={cls.username}
+                        width={100}
+                        height={16}
+                    />
                 </div>
                 <Skeleton className={cls.text} width="100%" height={50} />
             </VStack>
@@ -46,7 +53,10 @@ export const CommentCard = memo((props: CommentCardProps) => {
             max
             className={classNames(cls.CommentCard, {}, [className])}
         >
-            <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
+            <AppLink
+                to={getRouteProfile(comment.user.id)}
+                className={cls.header}
+            >
                 <Avatar size={30} src={comment.user.avatar} />
                 <Text className={cls.username} text={comment.user.username} />
             </AppLink>

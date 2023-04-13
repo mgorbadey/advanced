@@ -1,15 +1,13 @@
 import { ValidateProfileError } from '../../consts/editableProfileCardconsts';
 import { Profile } from '@/entities/Profile';
 
-export const validateProfileData = (profile?:Profile) => {
+export const validateProfileData = (profile?: Profile) => {
     if (!profile) {
         return [ValidateProfileError.NO_DATA];
     }
-    const {
-        firstname, lastname, age, city,
-    } = profile;
+    const { firstname, lastname, age, city } = profile;
 
-    const errors:ValidateProfileError[] = [];
+    const errors: ValidateProfileError[] = [];
 
     if (!firstname || !lastname) {
         errors.push(ValidateProfileError.INCORRECT_USER_DATA);

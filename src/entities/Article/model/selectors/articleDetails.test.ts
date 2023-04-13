@@ -11,7 +11,7 @@ describe('getArticleDetailsData.test', () => {
             id: '1',
             title: 'Title',
         };
-        const state:DeepPartial<StateSchema> = {
+        const state: DeepPartial<StateSchema> = {
             articleDetails: {
                 data,
             },
@@ -19,14 +19,14 @@ describe('getArticleDetailsData.test', () => {
         expect(getArticleDetailsData(state as StateSchema)).toEqual(data);
     });
     test('should work with empty state', () => {
-        const state:DeepPartial<StateSchema> = {};
+        const state: DeepPartial<StateSchema> = {};
         expect(getArticleDetailsData(state as StateSchema)).toEqual(undefined);
     });
 });
 
 describe('getArticleDetailsIsLoading.test', () => {
     test('should return true', () => {
-        const state:DeepPartial<StateSchema> = {
+        const state: DeepPartial<StateSchema> = {
             articleDetails: {
                 isLoading: true,
             },
@@ -34,14 +34,14 @@ describe('getArticleDetailsIsLoading.test', () => {
         expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true);
     });
     test('should work with empty state isLoading', () => {
-        const state:DeepPartial<StateSchema> = {};
+        const state: DeepPartial<StateSchema> = {};
         expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(false);
     });
 });
 
 describe('getArticleDetailsError.test', () => {
     test('should return true', () => {
-        const state:DeepPartial<StateSchema> = {
+        const state: DeepPartial<StateSchema> = {
             articleDetails: {
                 error: 'Error',
             },
@@ -49,7 +49,7 @@ describe('getArticleDetailsError.test', () => {
         expect(getArticleDetailsError(state as StateSchema)).toEqual('Error');
     });
     test('should work with empty state error', () => {
-        const state:DeepPartial<StateSchema> = {};
+        const state: DeepPartial<StateSchema> = {};
         expect(getArticleDetailsError(state as StateSchema)).toEqual(undefined);
     });
 });

@@ -1,10 +1,13 @@
-import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts';
+import {
+    ArticleBlockType,
+    ArticleType,
+} from '../../model/consts/articleConsts';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 import { Article } from '../types/article';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { articleDetailsReducer } from './articleDetailsSlice';
 
-const article:Article = {
+const article: Article = {
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
@@ -82,17 +85,25 @@ describe('articleDetailsSlice.test', () => {
     test('test fetchArticleById service pending', () => {
         const state: DeepPartial<ArticleDetailsSchema> = { isLoading: false };
 
-        expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending))
-            .toEqual({ isLoading: true });
+        expect(
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.pending,
+            ),
+        ).toEqual({ isLoading: true });
     });
     test('test fetchArticleById service fullfiled', () => {
         const state: DeepPartial<ArticleDetailsSchema> = { isLoading: true };
 
-        expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.fulfilled(article, '', '')))
-            .toEqual({
-                data: article,
-                isLoading: false,
-                error: undefined,
-            });
+        expect(
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.fulfilled(article, '', ''),
+            ),
+        ).toEqual({
+            data: article,
+            isLoading: false,
+            error: undefined,
+        });
     });
 });

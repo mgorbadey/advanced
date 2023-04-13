@@ -1,5 +1,5 @@
-export type ScrollSchema = Record<string, number>
+export type ScrollSchema = Record<string, number>;
 
 export interface RestoreScrollSchema {
-    scroll: ScrollSchema
+    scroll: ScrollSchema;
 }

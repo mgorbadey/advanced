@@ -8,7 +8,7 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta < typeof Code>;
+} as ComponentMeta<typeof Code>;
 
 const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;
 

@@ -1,10 +1,11 @@
-import React, {
-    MutableRefObject, ReactNode, UIEvent, useRef,
-} from 'react';
+import React, { MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { getRestoreScrollByPath, restoreScrollActions } from '@/features/restoreScroll';
+import {
+    getRestoreScrollByPath,
+    restoreScrollActions,
+} from '@/features/restoreScroll';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
@@ -26,8 +27,8 @@ export const Page = (props: PageProps) => {
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
     const location = useLocation();
-    const scrollPosition = useSelector(
-        (state:StateSchema) => getRestoreScrollByPath(state, location.pathname),
+    const scrollPosition = useSelector((state: StateSchema) =>
+        getRestoreScrollByPath(state, location.pathname),
     );
 
     useInfiniteScroll({
@@ -41,12 +42,12 @@ export const Page = (props: PageProps) => {
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(restoreScrollActions.setScrollPosition(
-            {
+        dispatch(
+            restoreScrollActions.setScrollPosition({
                 path: location.pathname,
                 position: e.currentTarget.scrollTop,
-            },
-        ));
+            }),
+        );
     }, 1000);
 
     return (
@@ -58,7 +59,9 @@ export const Page = (props: PageProps) => {
             data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
-            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
+            {onScrollEnd ? (
+                <div className={cls.trigger} ref={triggerRef} />
+            ) : null}
         </main>
     );
 };
