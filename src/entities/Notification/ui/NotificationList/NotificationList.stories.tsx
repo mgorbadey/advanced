@@ -44,6 +44,7 @@ WithNotifications.parameters = {
                     href: 'www.google.com',
                 },
             ],
+            // delay: 3000, - this delay allows to 'postpone' server responce for specified number of milliseconds
         },
     ],
 };
